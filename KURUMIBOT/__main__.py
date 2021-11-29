@@ -197,11 +197,11 @@ def start(update: Update, context: CallbackContext):
                     ],
                      [
                          InlineKeyboardButton(
-                             text="🚨 XFORCESUPPORT 🚨",
-                             url=f"https://t.me/XForceSupport"),
+                             text="🚨 Thorfinn support chat 🚨",
+                             url=f"https://t.me/thorfinnsupport"),
                          InlineKeyboardButton(
-                             text="Anime Land • Xforce",
-                             url="https://t.me/LandOfAnimes7")
+                             text="One Piece",
+                             url="https://t.me/OnePiece720pSUB")
                     ], 
                      [
                          InlineKeyboardButton(
@@ -210,8 +210,8 @@ def start(update: Update, context: CallbackContext):
                     ], 
                      [
                          InlineKeyboardButton(
-                             text="Uɴɪᴛᴇᴅ Gʀᴏᴜᴘ Oғ Wᴇᴇʙs ⛩ | #✗ғ",
-                             url="https://t.me/WeebChatGroup")
+                             text="Weeb Galaxy | [EN] SFW Chat",
+                             url="https://t.me/WeebGalaxy")
                     ]]))
                      
                     
