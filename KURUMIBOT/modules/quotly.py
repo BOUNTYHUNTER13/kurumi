@@ -36,7 +36,6 @@ HELP = """
 /q [INTEGER] - To quote more than 1 messages.
 /q r - to quote a message with it's reply
 
-Use .q to quote using userbot
 """
 
 
@@ -65,7 +64,7 @@ def isArgInt(message: Message) -> list:
 
 
 @app2.on_message(
-    filters.command("q", prefixes=USERBOT_PREFIX) & filters.user(SUDOERS)
+    filters.command("q") & filters.user(SUDOERS)
 )
 @app.on_message(filters.command("q") & ~filters.private)
 @capture_err
@@ -111,3 +110,31 @@ async def quotly_func(client, message: Message):
             reply_message = await client.get_messages(
                 message.chat.id,
                 message.reply_to_message.message_id,
+                replies=1,
+            )
+            messages = [reply_message]
+    else:
+        return await m.edit(
+            "Incorrect argument, check quotly module in help section."
+        )
+    try:
+        if not message:
+            return await m.edit("Something went wrong.")
+
+        sticker = await quotify(messages)
+        if not sticker[0]:
+            await message.reply_text(sticker[1])
+            return await m.delete()
+        sticker = sticker[1]
+        await message.reply_sticker(sticker)
+        await m.delete()
+        sticker.close()
+    except Exception as e:
+        await m.edit(
+            "Something went wrong while quoting messages,"
+            + " This error usually happens when there's a "
+            + " message containing something other than text,"
+            + " or one of the messages in-between are deleted."
+        )
+        e = format_exc()
+        print(e)
