@@ -1,5 +1,5 @@
 from KURUMIBOT import LOAD, LOGGER, NO_LOAD
-
+from Python_ARQ import ARQ
 
 def __list_all_modules():
     import glob
