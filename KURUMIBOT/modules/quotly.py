@@ -2,7 +2,7 @@ from io import BytesIO
 from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
-from KURUMIBOT import pbot, app
+from KURUMIBOT import pbot
 from .. import arq
 
 async def quotify(messages: list):
