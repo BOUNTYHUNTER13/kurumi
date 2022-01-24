@@ -3,7 +3,7 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 from KURUMIBOT import pbot
-from .. import arq
+import arq
 
 async def quotify(messages: list):
     response = await arq.quotly(messages)
